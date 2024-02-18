@@ -3,4 +3,4 @@
 
 <p> <b>QUOTE MASTER</b> app is designed to streamline the process of creating quotes, making it quick and effortless. Originally developed for a specific stone manufacturing company, this app is versatile enough to benefit others in the industry with minor modifications. Its user-friendly interface ensures that generating quotes is both fast and straightforward, catering to the unique needs of businesses looking for efficiency and accuracy in their quoting process. </p>
 
-## The app can be tested [HERE](https://quote-master-57500bcdd825.herokuapp.com/)https://quote-master-57500bcdd825.herokuapp.com/)
+## The app can be tested [HERE](https://quote-master-57500bcdd825.herokuapp.com/)
