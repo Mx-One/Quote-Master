@@ -8,7 +8,7 @@
 - **PDF Conversion**: Securely save your quotes in PDF format for easy sharing, archiving, and printing, ensuring they look professional across all devices.
 - **NEW! Optimal Cutting Layout**: Utilize an algorithm to calculate the precise material quantity required for each job. The app generates an optimal cutting layout, demonstrating the most efficient way to cut materials to minimize waste and maximize resource usage.
 
-  ![Stone slab cutting layout](https://github.com/Mx-One/Quote-Master/assets/103391772/0bb96a4d-105b-4e7a-aa0c-6543fdf3751f)
+![Stone slab cutting layout](https://github.com/Mx-One/Quote-Master/assets/103391772/1a920e47-6b29-4670-8924-85c9b79530b1)
   
 
 ## Test the app 
