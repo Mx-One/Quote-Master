@@ -1,2 +1,2 @@
-# QUOTE MASTER app
-<p> Create quotes fast and easy. Made for stone manufacturing companies. </p>
+# QUOTE MASTER
+<p> <b>QUOTE MASTER</b> is designed to streamline the process of creating quotes, making it quick and effortless. Originally developed for a specific stone manufacturing company, this app is versatile enough to benefit others in the industry with minor modifications. Its user-friendly interface ensures that generating quotes is both fast and straightforward, catering to the unique needs of businesses looking for efficiency and accuracy in their quoting process. </p>
