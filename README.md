@@ -3,10 +3,10 @@
 <p> <b>QUOTE MASTER</b> app is designed to streamline the process of creating quotes, making it quick and effortless. Originally developed for a specific stone manufacturing company, this app is versatile enough to benefit others in the industry with minor modifications. Its user-friendly interface ensures that generating quotes is both fast and straightforward, catering to the unique needs of businesses looking for efficiency and accuracy in their quoting process. </p>
 
 ## Features
-- **Auto formating**: Fill the pre-defined forms that will automatically format to a beatiful quote.
-- **CSV data**: Upload data from CSV file to automatically fill the forms without manual inputs.
-- **PDF convetation**: The file get saved in PDF format.
-- **Optimal cutting layout**: Calculate the material quantity required to do the job. The algorithm creates an optimal cutting layout showing the best way to cut to minimize waste. 
+- **Auto Formatting**: Utilize pre-defined forms that automatically format information into a beautifully crafted quote, saving you time and effort.
+- **CSV Data Import**: Effortlessly upload data from CSV files to auto-populate the forms, eliminating the need for manual input and reducing the potential for errors.
+- **PDF Conversion**: Securely save your quotes in PDF format for easy sharing, archiving, and printing, ensuring they look professional across all devices.
+- **Optimal Cutting Layout**: Utilize an algorithm to calculate the precise material quantity required for each job. The app generates an optimal cutting layout, demonstrating the most efficient way to cut materials to minimize waste and maximize resource usage.
 
-### Test the app 
+## Test the app 
 The app is live and can be tested [HERE](https://quote-master-57500bcdd825.herokuapp.com/)
