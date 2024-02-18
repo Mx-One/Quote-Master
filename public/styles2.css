@@ -1,0 +1,150 @@
+h2 {
+  font-family: 'Poppins';
+  /* font-weight: bold; */
+  font-size: 1.5rem;
+  padding-top: 2%;
+  padding-bottom: 3%
+}
+
+h4 {
+  font-family: 'Roboto';
+  font-weight: bold;
+  font-size: 1.25rem;
+  padding-bottom: 1%
+}
+
+h5 {
+  color: red;
+  font-size: 1rem;
+}
+
+.logo {
+  margin-left: 40px;
+  margin-top: 40px;
+  width: 168px;
+  height: 81px;
+}
+
+.well-box {
+  background: #FFFFFF;
+  box-shadow: 8px 8px 20px #00000029;
+  border-radius: 5px;
+  opacity: 1;
+  margin: 50px 6% auto;
+  padding: 15px 0 15px 30px;
+}
+
+.smaller-text {
+  font-family: 'Roboto';
+  font-weight: normal;
+  font-size: 0.8rem;
+  padding-left: 5px;
+}
+
+#output-slabs {
+  color: black;
+  font-size: 1rem;
+}
+
+.tables-container {
+  padding: 1%;
+  padding-left: 2.5%;
+}
+
+.column {
+  padding-bottom: 2%;
+  margin-right: 4%;
+}
+
+.settings {
+  border: 1px solid #FFD39A;
+  border-radius: 10px;
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  padding-top: 0.5%;
+  margin-left: 4%;
+  text-align: center;
+}
+
+.settings-type {
+  margin-top: 20px;
+}
+
+label {
+  font-size:14px;
+  font-family: 'Roboto';
+}
+
+.button {
+  padding: 1%;
+  padding-left: 3.5%;
+  padding-bottom: 3.5%;
+  display: inline-block;
+}
+
+.hide {
+  display: none;
+}
+
+#containers {
+  padding-top: 1%;
+}
+
+.cnt {
+  width: 600px;
+  height: 350px;
+  padding: 1% 2% 1% 0;
+  display: inline-block;
+}
+
+.form-group {
+  display: flex;
+  align-items: center;
+}
+
+.trim {
+  margin-left: 10px;
+}
+
+#trim {
+  width: 50px;
+  margin-left: 5px;
+}
+
+.form-switch {
+  font-size: 1rem;
+  display: inline-block;
+}
+
+.form-switch .form-check-input:checked {
+    background-color: #40A9AD;
+    border-color: #40A9AD;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba(255,255,255,1.0)'/%3e%3c/svg%3e");
+}
+
+.form-switch .form-check-input:focus {
+  border-color: #40A9AD;
+  box-shadow: 0 0 0.1rem 0.1rem #40A9AD;;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba(255, 211, 154, 1)'/%3e%3c/svg%3e");
+}
+
+table.jexcel {
+  font-size:14px;
+  font-family: 'Roboto';
+  line-height: 2;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.form-control:focus {
+  border-color: #40A9AD;
+  box-shadow: 0 0 0 0.2rem #40A9AD;
+}

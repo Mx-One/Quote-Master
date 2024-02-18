@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="https://use.typekit.net/ewx2jfi.css">
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="//cdn.rawgit.com/rainabba/jquery-table2excel/1.1.0/dist/jquery.table2excel.min.js"></script>
+    <script src=<%- library1 %> integrity="sha512-SGWgwwRA8xZgEoKiex3UubkSkV1zSE1BS6O4pXcaxcNtUlQsOmOmhVnDwIvqGRfEmuz83tIGL13cXMZn6upPyg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src=<%- library2 %> ></script>
+    <script src=<%- library3 %> ></script>
+    <link rel="stylesheet" href=<%- library4 %>  type="text/css" />
+    <link rel="stylesheet" href=<%- library5 %>  type="text/css" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+
+    <script src=<%- library6 %>  integrity="sha512-YcsIPGdhPK4P/uRW6/sruonlYj+Q7UHWeKfTAkBW+g83NKM+jMJFJ4iAPfSnVp7BKD4dKMHmVSvICUbE/V1sSw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src=<%- library7 %> ></script>
+
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="icon" href="favicon.ico?v=2">
+
+    <title>  QUOTE MASTER 3000 </title>
+  </head>
+
+  <body>
+
+    <div class="container-fluid header">
+      <a href="#">
+        <img class="logo" src="Logo-v1.1 copy.png" alt="">
+      </a>
+    </div>
+
+
+
+    <div class="container intro-text">
+      <h3 class="intro">Welcome to { Quote Master 3000 } --- ver. 2.1 --- for Stone Manufacturers</h3>
+
+    </div>
+
+    <div>
+      <input type="checkbox" class="btn-check" id="btn-check" autocomplete="off">
+      <label id="project-info-btn" class="btn btn-outline-secondary hide" for="btn-check">Project info</label>
+    </div>
+
+
+    <div class="card well-box well-box-start">
+
+      <div class="row row-box">
+        <div class="col row-box-text">
+          <label class="" for="files">Upload a CSV file:</label>
+        </div>
+
+        <div class="col">
+           <input type="file" id="files" name="csvfile" class="form-control" accept=".csv" required />
+        </div>
+
+        <div class="col submit-file">
+          <button type="submit" id="submit-file" class="btn btn-outline-success">Upload File</button>
+        </div>
+
+      </div>
+      <p class="or"> - OR - </p>
+
+      <button id="new-quote-btn" class="btn btn-warning btn-lg shadow" type="button" name="button">New Quote</button>
+
+      <form class="cutting-page-form" action="/" method="post">
+        <button id="cut-layout-btn" class="btn btn-outline-success btn-lg shadow" type="submit" name="layoutBtn" value="btn">Cutting layout<span class="badge bg-secondary">New</span></button>
+      </form>
+
+
+
+    <div id="tables" class="hide">
+      <h3 class="slab-supply-h3">Raw input data</h3>
+      <div id="spreadsheet"></div>
+
+
+      <p>
+
+      <button id="btn-unique" class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        Unique items
+      </button>
+      </p>
+    <div class="collapse" id="collapseExample">
+      <div class="card card-body">
+        <h3>Unique items</h3>
+        <div id="spreadsheet-unique"></div>
+      </div>
+    </div>
+
+    </div>
+
+
+    <form class="row g-3 project-info hide">
+      <div class="col-auto">
+        <label for="date" class="">Date:</label>
+        <input type="data" class="form-control" id="date-input" placeholder="date">
+      </div>
+      <div class="col-auto">
+        <label for="quote-number" class="">Quote #:</label>
+        <input type="text" class="form-control" id="quote-number" placeholder="Quote number">
+      </div>
+      <div class="col-auto">
+        <label for="projectAddress" class="">Project address:</label>
+        <input type="text" class="form-control" id="project-address" placeholder="Address">
+      </div>
+      <div class="col-auto">
+        <label for="client" class="">Client name:</label>
+        <input type="text" class="form-control" id="client-name" placeholder="Name">
+      </div>
+  </form>
+
+    <div id="calc-tables" class="hide">
+      <div class="row container">
+        <div class="col-1 calc-tables-checkbox">
+          <input class="form-check-input slab-supply-h3 slab-supply-table-checkbox" type="checkbox" value="" id="flexCheckChecked" checked>
+        </div>
+        <div class="col-1 calc-tables-headers">
+          <label class="form-check-label" for="flexCheckChecked">
+            <h3 id="slab-supply-header" class="slab-supply-h3">Slab supply estimate</h3>
+          </label>
+        </div>
+
+      </div>
+
+      <div id="slab-supply"></div>
+
+      <div class="row container">
+        <div class="col-1 calc-tables-checkbox">
+          <input class="form-check-input slab-supply-h3 slab-work-table-checkbox" type="checkbox" value="" id="flexCheckChecked" checked>
+        </div>
+        <div class="col-1 calc-tables-headers">
+          <label class="form-check-label" for="flexCheckChecked">
+            <h3 id="slab-work-header" class="slab-supply-h3">Slab work estimate</h3>
+          </label>
+        </div>
+
+      </div>
+
+      <div id="slab-work"></div>
+    </div>
+
+    <div id="to-pdf" class="container hide">
+
+      <div id="to-pdf-second-layer"class="container">
+
+      <div class="row pdf-header">
+        <div class="col pdf-header-left">
+          <h3 class="comp-name">STONE MANUFACTURER</h3>
+          <p class="address">112 RIDGE ROCK DR</p>
+          <p class="address">VAUGHAN, ON, M2T 3T2 </p>
+          <p class="address">TEL: 905 111 1111    FAX: 905 111 5595</p>
+
+        </div>
+        <div class="col pdf-header-center">
+          <img class="cmg-logo" src="Company-logo.jpg" alt="">
+        </div>
+        <div class="col pdf-header-right">
+          <p id="date" class="pdf-header-right-text">DATE: </p>
+          <p id="quote-num" class="pdf-header-right-text">QUOTE #: </p>
+          <p id="project-name" class="pdf-header-right-text">PROJECT:  </p>
+          <p id="customer" class="pdf-header-right-text">CUSTOMER: </p>
+        </div>
+      </div>
+
+      </div>
+
+      <div class="container container-total">
+        <div class="row">
+          <div class="col-1 col-total">
+            TOTAL
+          </div>
+          <div id="total-amount" class="col-1 col-total-amount">
+            $0
+          </div>
+        </div>
+        <div class="row hide">
+          <div class="col-1 col-total">
+            Discount
+          </div>
+          <div id="discount-amount" class="col-1 col-total-amount">
+            $0
+          </div>
+        </div>
+        <div class="row hide">
+          <div class="col-1 col-total">
+            TOTAL after discount
+          </div>
+          <div id="total-after-discount-amount" class="col-1 col-total-amount">
+            $0
+          </div>
+        </div>
+          <div class="row">
+            <div class="col-1 col-total">
+              HST
+            </div>
+            <div id="hst-amount" class="col-1 col-total-amount">
+              13%
+            </div>
+          </div>
+            <div class="row">
+              <div class="col-1 col-total" style="font-weight: bold">
+                GRAND TOTAL
+              </div>
+              <div id="grand-total-amount" class="col-1 col-total-amount">
+                $0
+              </div>
+            </div>
+        </div>
+
+  </div>
+
+  </div>
+      <div class="row container bottom-btn hide">
+        <div class="col-1 next-back-btn">
+          <button id="back" class="btn btn-outline-secondary" type="button" name="button">Back</button>
+          <button id="next" class="btn btn-success" type="button" name="button">Next</button>
+          <button id="pdf-btn" class="btn btn-warning hide" type="button" name="button">Convert to PDF</button>
+        </div>
+        <div class="col-1 print-options hide">
+          <div class="col-1 form-check form-check-btn slab-supply">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+            <label class="form-check-label" for="flexCheckChecked">
+              Slab supply
+            </label>
+          </div>
+          <div class="col-1 form-check form-check-btn slab-work">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+            <label class="form-check-label" for="flexCheckChecked">
+              Slab work
+            </label>
+          </div>
+        </div>
+      </div>
+
+
+<%- include("footer.min.ejs") -%>

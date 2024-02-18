@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+
+  <!-- jQuery -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+  <script src=<%- library2 %> ></script>
+  <script src=<%- library3 %> ></script>
+  <link rel="stylesheet" href=<%- library4 %>  type="text/css" />
+  <link rel="stylesheet" href=<%- library5 %>  type="text/css" />
+
+  <!-- Bootstrap CSS & JS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+
+  <script src=<%- library8 %> integrity="sha512-D9pUm3+gWPkv/Wl6vd45vRLjdkdEKGje7BxOxYG0N6m4UlEUB7RSljBwpmJNAOuf6txLLtlaRchoKfzngr/bQg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles2.css">
+
+  <title></title>
+
+</head>
+
+<body>
+
+  <div class="container-fluid header">
+    <form action="/submit" method="post">
+      <a href="#">
+        <input class="logo" name="logo" value="clicked" type="image" src="Logo-v1.1 copy.png" alt="Submit">
+      </a>
+</form>
+
+  </div>
+
+  <div class="card well-box">
+
+  <div class="container-fluid tables-container">
+    <div class="row">
+      <div class="col-sm-4 column">
+        <div class="container-fluid ">
+          <h2>STONE SLAB CUTTING LAYOUT</h2>
+        </div>
+      </div>
+    <div class="row">
+      <div class="col-sm-4 column">
+        <div id="slab-size" class="container-fluid ">
+          <h4>Slab size <span class="smaller-text"><i>(in inches)</i></span></h4>
+        </div>
+      </div>
+    <div class="row">
+      <div class="col-sm-2 column">
+        <div id="items" class="container">
+          <h4>Items size <span class="smaller-text"><i>(in inches)</i></span></h4>
+        </div>
+      </div>
+      <div class="col-sm-2 settings">
+        <div class="">
+          <h4 class="column">Settings</h4>
+        </div>
+          <div class="form-group settings-type">
+            <input type="number" class="form-control" id="trim" placeholder="0.5">
+            <label for="inputField" class="trim">Trim</label>
+          </div>
+          <div class="form-check form-switch settings-type">
+            <input class="form-check-input" type="checkbox" role="switch" id="flip-switch" checked>
+            <label class="form-check-label" for="flexSwitchCheckChecked">Flip items</label>
+          </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-2 column">
+          <div class="button">
+            <button id="calculate-btn" class="btn btn-outline-secondary" type="button" name="button">Calculate</button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col column">
+            <div id="containers" class="container-fluid">
+              <h4 class="output hide">Output:</h4>
+              <h5 class="hide" id="output-text"></h5>
+              <h5 class="hide" id="output-slabs"></h5>
+            </div>
+          </div>
+
+  </div>
+</div>
+</div>
+
+
+  <script type="text/javascript">
+
+class Shape{constructor(length,width){this.length=length;this.width=width;this.area=length*width;this.num=0;this.x=0;this.y=0;this.placed=false}flipSides(){let temp=this.width;this.width=this.length;this.length=temp}fitsIn(grid,x,y,layoutlength,layoutwidth){try{if(x+this.length<=layoutlength&&y+this.width<=layoutwidth){let xOne=x;let xTwo=x+this.length-1;let yOne=y;let yTwo=y+this.width-1;if(grid[yOne][xTwo]!==null||grid[yTwo][xTwo]!==null){return false}for(let i=xOne;i<=xTwo;i++){for(let j=yOne;j<=yTwo;j++){if(grid[j][i]!==null){return false}}}return true}}catch(error){console.log("Error occurred: ",error);console.log("x: "+x+" "+" y: "+y)}return false}}class Layout{constructor(length,width){this.length=length;this.width=width;this.trim=5;this.grid=[];this.shapes=[];this.counter=0;this.placedArr=[];this.flip=true;this.slabSizeArr=[120,60];this.shapesSizeArr=[[,],[,]]}numShapes(shapes){for(let i=0;i<shapes.length;i++){shapes[i].num=i+1}}shapeSort(shapes){shapes.sort((a,b)=>b.area-a.area)}emptyGrid(grid,length,width){for(let i=0;i<width;i++){grid.push(new Array(length).fill(null))}}}let layout=new Layout(120,60);const cleanData=function(instance,cell,col,row,val,label,cellName){if(val.length<1){cell.style.backgroundColor="#FF2E2E";return}if(val=="LastRow"){sizeSheet.deleteRow(layout.shapesSizeArr.length-1);for(let i=0;i<layout.shapes.length;i++){const number=layout.shapes[i].num;sizeSheet.getCell("A"+number).style.backgroundColor="#3CB043";sizeSheet.getCell("B"+number).style.backgroundColor="#3CB043"}}let value=val.replace(/([\.,])(?=.*\1)|,(?=[^,]*$)/g,function(match,capture1){return capture1?"":"."});cell.innerHTML=value;if(/[^0-9.]/.test(value)){cell.style.backgroundColor="#FF2E2E";$("#output-text").html("Only numeric characters are allowed.");$("#output-text").removeClass("hide")}else if(instance.id!="slab-size"&&Number(value)>layout.length-layout.trim/10){cell.style.backgroundColor="#FF2E2E";$("#output-text").html("Item size can't be larger than the slab.");$("#output-text").removeClass("hide")}else{cell.style.backgroundColor="#FFFFFF";$("#output-text").addClass("hide")}};const slabSizeSheet=jspreadsheet(document.getElementById("slab-size"),{data:[layout.slabSizeArr],columns:[{type:"numeric",title:"Length",width:100},{type:"numeric",title:"Width",width:100}],wordWrap:true,defaultRowHeight:30,columnSorting:false,allowManualInsertColumn:false,allowManualInsertRow:false,onchange:cleanData});slabSizeSheet.hideIndex();const sizeSheet=jspreadsheet(document.getElementById("items"),{data:layout.shapesSizeArr,columns:[{type:"numeric",title:"Length",width:100},{type:"numeric",title:"Width",width:100}],wordWrap:true,defaultRowHeight:30,columnSorting:false,allowManualInsertColumn:false,onchange:cleanData});function shapePlacement(layout,shape,grid,length,width){for(let i=0;i<width&&!shape.placed;i++){for(let j=0;j<length&&!shape.placed;j++){if(grid[i][j]===null&&shape.fitsIn(grid,j,i,length,width)){shape.x=j+layout.trim;shape.y=i+layout.trim;for(let row=i;row<i+shape.width;row++){for(let col=j;col<j+shape.length;col++){grid[row][col]=shape.num}}shape.placed=true;layout.counter--;layout.placedArr[layout.placedArr.length-1].push(shape)}}}return grid}function getOptimalCuttingLayout(layout,shapes,grid,length,width){layout.counter=shapes.length;let innerCounter=0;while(layout.counter>0){innerCounter++;if(innerCounter>shapes.length){break}layout.placedArr.push([]);layout.grid.push([]);layout.emptyGrid(grid[grid.length-1],length,width);for(const shape of shapes){if(!shape.placed){shapePlacement(layout,shape,grid[grid.length-1],length,width)}if(!shape.placed&&layout.flip){shape.flipSides();shapePlacement(layout,shape,grid[grid.length-1],length,width)}if(!shape.placed&&layout.flip){shape.flipSides()}}}return grid[grid.length-1]}function createLayout(layout){const rects=[];var params={fitted:true};var styles={size:30,family:"Lato"};for(let i=0;i<layout.placedArr.length;i++){let container=document.createElement("div");container.setAttribute("id","container "+(i+1));container.setAttribute("class","cnt");document.getElementById("containers").appendChild(container);two=new Two(params).appendTo(container);rects.push([]);let slab=two.makeRectangle((layout.length+layout.trim)/2,(layout.width+layout.trim)/2,layout.length+layout.trim,layout.width+layout.trim);rects[rects.length-1].push(slab);for(const shape of layout.placedArr[i]){let rect=two.makeRectangle(shape.x+shape.length/2,shape.y+shape.width/2,shape.length,shape.width);let text=two.makeText(shape.num,shape.x+shape.length/2,shape.y+shape.width/2,styles);rects[rects.length-1].push(rect);rects[rects.length-1].push(text)}let group=two.makeGroup(...rects[i]);group.scale=.4;group.linelength=2;two.update()}}$("#calculate-btn").click(async()=>{if(document.querySelectorAll(".cnt")){const container=document.querySelectorAll(".cnt");container.forEach(container=>{while(container.hasChildNodes()){container.firstChild.remove()}container.remove()})}$("#output").addClass("hide");$("#output-text").addClass("hide");$("#output-slabs").addClass("hide");const trimValue=document.getElementById("trim").value;if(trimValue>0){layout.trim=trimValue*10}await filterShapes(layout.slabSizeArr,layout.shapesSizeArr);$(".output").removeClass("hide");await layout.shapeSort(layout.shapes);await getOptimalCuttingLayout(layout,layout.shapes,layout.grid,layout.length-layout.trim,layout.width-layout.trim);await createLayout(layout);let slabsNumber=layout.placedArr.length;$("#output-slabs").html("Number of slabs required: "+slabsNumber);$("#output-slabs").removeClass("hide")});const switchElement=document.getElementById("flip-switch");switchElement.addEventListener("change",function(){if(this.checked){layout.flip=true}else{layout.flip=false}});const filterShapes=function(slabSizeArr,shapesSizeArr){layout.length=Number(slabSizeArr[0]).toFixed(1)*10-layout.trim;layout.width=Number(slabSizeArr[1]).toFixed(1)*10-layout.trim;layout.shapes=[];layout.placedArr=[];const shapesArr=shapesSizeArr.map(arr=>arr.map(element=>Number(element).toFixed(1)*10));let counter=0;for(const shape of shapesArr){counter++;if(shape[0]<=0|shape[1]<=0){continue}else{if(layout.flip){if((shape[0]<=layout.length-layout.trim&&shape[1]<=layout.width-layout.trim)|(shape[1]<=layout.length-layout.trim&&shape[0]<=layout.width-layout.trim)){let shapeObj=new Shape(shape[0],shape[1]);shapeObj.num=counter;layout.shapes.push(shapeObj)}else{if(layout.trim>=20){$("#output-text").html("Some of the items may not be rendered correctly. Try to reduce trim.");$("#output-text").removeClass("hide")}else{$("#output-text").html("Some of the items may not be rendered. Try to reduce items size.");$("#output-text").removeClass("hide")}}}else{if(shape[0]<=layout.length-layout.trim&&shape[1]<=layout.width-layout.trim){let shapeObj=new Shape(shape[0],shape[1]);shapeObj.num=counter;layout.shapes.push(shapeObj)}else{if(layout.trim>=20){$("#output-text").html("Some of the items may not be rendered correctly. Try to reduce trim.");$("#output-text").removeClass("hide")}else{$("#output-text").html("Some of the items may not be rendered. Try to reduce items size.");$("#output-text").removeClass("hide")}}}}}layout.shapesSizeArr.push([" "," "]);sizeSheet.refresh();sizeSheet.setValueFromCoords(0,shapesSizeArr.length-1,"LastRow")};
+
+
+
+
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+{
+  "name": "quote-template-project",
+  "version": "1.0.0",
+  "description": "Quoting system",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Max Olatoye",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "bootstrap": "^5.2.2",
+    "browserify": "^17.0.0",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "fs": "^0.0.1-security",
+    "jspreadsheet-ce": "^4.11.1",
+    "request": "^2.88.2",
+    "two.js": "^0.8.10",
+    "uglify-js": "^3.17.4"
+  }
+}
