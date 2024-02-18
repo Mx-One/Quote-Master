@@ -7,7 +7,8 @@
 - **CSV Data Import**: Effortlessly upload data from CSV files to auto-populate the forms, eliminating the need for manual input and reducing the potential for errors.
 - **PDF Conversion**: Securely save your quotes in PDF format for easy sharing, archiving, and printing, ensuring they look professional across all devices.
 - **NEW! Optimal Cutting Layout**: Utilize an algorithm to calculate the precise material quantity required for each job. The app generates an optimal cutting layout, demonstrating the most efficient way to cut materials to minimize waste and maximize resource usage.
-  ![Stone slab cutting layout](https://github.com/Mx-One/Quote-Master/assets/103391772/0d85df77-6dce-46c3-8e50-1f9826eceba8)
+
+  ![Stone slab cutting layout](https://github.com/Mx-One/Quote-Master/assets/103391772/0bb96a4d-105b-4e7a-aa0c-6543fdf3751f)
   
 
 ## Test the app 
