@@ -10,6 +10,8 @@
 
   <img src="https://github.com/Mx-One/Quote-Master/assets/103391772/1a920e47-6b29-4670-8924-85c9b79530b1" alt="Stone slab cutting layout" title="Stone slab cutting layout" width="500">
 
+## Tech stack
+[![My Skills](https://skillicons.dev/icons?i=js,html,css,nodejs,express)](https://skillicons.dev)
 
 ## Test the app 
 The app is live and can be tested [HERE](https://quote-master-57500bcdd825.herokuapp.com/)
