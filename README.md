@@ -8,7 +8,7 @@
 - **PDF Conversion**: Securely save your quotes in PDF format for easy sharing, archiving, and printing, ensuring they look professional across all devices.
 - **NEW! Optimal Cutting Layout**: Utilize an algorithm to calculate the precise material quantity required for each job. The app generates an optimal cutting layout, demonstrating the most efficient way to cut materials to minimize waste and maximize resource usage.
 
-  <img src="https://github.com/user-attachments/assets/b7a4e680-39e7-4460-bc00-9b68d230e571" alt="Stone slab cutting layout" title="Stone slab cutting layout" width="500">
+  <img src="https://github.com/user-attachments/assets/f808fe5f-d5ca-49b7-89d2-9f420eb127d5" alt="Stone slab cutting layout" title="Stone slab cutting layout" width="500">
 
 ## Tech stack
 [![My Skills](https://skillicons.dev/icons?i=js,html,css,nodejs,express)](https://skillicons.dev)
